@@ -1,4 +1,5 @@
 public class OperacionesVector{
+    private String [] auxVector;
     public static float norma(String [] vector){
         float suma = 0, indice;
         for (String a: vector)
@@ -11,10 +12,10 @@ public class OperacionesVector{
     }
 
     public static String [] productoEscalar(String [] vector, int escalar){
-        for (String a: vector)
-        {
-            a = String.valueOf(Float.parseFloat(a) * escalar);
+        for (int i=0; i<vector.length; i++) {
+            vector[i] = String.valueOf(Float.parseFloat(vector[i]) * escalar);
         }
+        // System.out.println(Arrays.toString(vector));
         return vector;
     }
 
