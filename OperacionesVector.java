@@ -19,4 +19,31 @@ public class OperacionesVector{
         return vector;
     }
 
+    //Realiza el producto punto, útil en la operación ángulo 
+    public static float anguloVectores(String [] vector1, String [] vector2){
+        //Realiza el producto punto
+        float suma=0,norma1=0,norma2=0,angulo;
+        for(int i=0; i<vector1.length; i++)
+        {
+            suma=suma+(Float.parseFloat(vector1[i])*Float.parseFloat(vector2[i]));
+        }
+        //Realiza las normas de los vectores
+        norma1=OperacionesVector.norma(vector1);
+        norma2=OperacionesVector.norma(vector2);
+        //Saca el ángulo
+        angulo=(float) ((float) Math.acos(suma/(norma1*norma2))*180/Math.PI);
+        return angulo;
+    }
+
+    public static String [] restaDeVectores(String[] vector1,String[] vector2){
+        int length = vector1.length;
+        String[] vector3 = new String[length];
+        float[] resta = new float[length];
+        for (int i = 0; i < length; i++) {
+            resta[i] = Float.parseFloat(vector1[i]) - Float.parseFloat(vector2[i]);
+            vector3[i] = String.valueOf(resta[i]);
+        }
+        return vector3;
+    }
+
 }
