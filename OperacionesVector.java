@@ -30,4 +30,15 @@ public class OperacionesVector{
         return vector3;
     }
 
+    public static String [] sumaDeVectores(String[] vector1,String[] vector2){
+        int length = vector1.length;
+        String[] vector3 = new String[length];
+        float[] resta = new float[length];
+        for (int i = 0; i < length; i++) {
+            resta[i] = Float.parseFloat(vector1[i]) + Float.parseFloat(vector2[i]);
+            vector3[i] = String.valueOf(resta[i]);
+        }
+        return vector3;
+    }
+
 }
