@@ -7,7 +7,11 @@ import javax.swing.JTextField;
 
 import java.util.Arrays;
 
-//Clase encargada de desplegar el menu
+/*	
+		Menu del programa
+		Se desplegan todas las opciones para el usuario
+*/
+
 public class Menu{
 	private String [] vector1, vector2;
 	private float escalar;
@@ -77,6 +81,8 @@ public class Menu{
 			}
 	}
 
+	//Despliega el submenu de la suma y resta
+
 	public void subMenuVector2() {
 		JTextField xField = new JTextField(100);
 		JTextField yField = new JTextField(100);
@@ -95,13 +101,19 @@ public class Menu{
 			}
 	}
 
+	//Pide un un vector por pantalla y lo almacena
+
 	public void SubmenuVector(){
 		vector1 = JOptionPane.showInputDialog(null,"Escriba el vector separado por comas\nEjem.  10,2,7,40,56" ).split(",");
 	}
 
+	//Pide un escalar por pantalla y lo almacena
+
 	public void SubmenuEscalar(){
 		escalar = Float.parseFloat(JOptionPane.showInputDialog(null, "Escriba el escalar: "));
 	}
+
+	//Muestra el resultado
 
 	public void MostrarMensaje(String mensaje){
 		JOptionPane.showMessageDialog(null, mensaje);

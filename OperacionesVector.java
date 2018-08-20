@@ -1,8 +1,14 @@
+
+/* 	Funciones de las operaciones en los vectores
+*/
+
 public class OperacionesVector{
 	private String [] auxVector;
 
 	public static float norma(String [] vector) {
 		float suma = 0, indice;
+
+		//Recorre el vector haciendo la suma de los cuadrados, hace raiz de la suma y retorna el resultado
 		for(String a: vector) {
 			indice = Float.parseFloat(a);
 			indice = (float) Math.pow(indice,2);
@@ -12,6 +18,8 @@ public class OperacionesVector{
 	}
 
 	public static String [] productoEscalar(String [] vector, float escalar) {
+
+		//Multiplica el escalar introducido en la función por el vector
 		for (int i=0; i<vector.length; i++) {
 			vector[i] = String.valueOf(Float.parseFloat(vector[i]) * escalar);
 		}
@@ -43,7 +51,7 @@ public class OperacionesVector{
 	public static float productoPunto(String [] vector1, String [] vector2) {
 		int length = vector1.length;
 		float resultado = 0;
-
+		//recorre el vector, multiplica las mismas posiciones de cada uno y los suma en la variable
 		for(int i = 0; i < length ; i++) {
 			resultado += Float.parseFloat(vector1[i]) * Float.parseFloat(vector2[i]);
 		}
