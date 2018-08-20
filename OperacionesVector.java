@@ -1,6 +1,6 @@
 public class OperacionesVector{
 	private String [] auxVector;
-	
+
 	public static float norma(String [] vector) {
 		float suma = 0, indice;
 		for(String a: vector) {
@@ -50,10 +50,20 @@ public class OperacionesVector{
 		return resultado;
 	}
 
-	public static float anguloVectores(String [] vector1, String [] vector2) {
-		float aux = productoPunto(vector1, vector2);
-		float norma1 = norma(vector1);
-		float norma2 = norma(vector2);
-		return aux / (norma1 * norma2);
-	}
+
+    //Realiza el producto punto, útil en la operación ángulo
+    public static float anguloVectores(String [] vector1, String [] vector2){
+        //Realiza el producto punto
+        float suma=0,norma1=0,norma2=0,angulo;
+        for(int i=0; i<vector1.length; i++)
+        {
+            suma=suma+(Float.parseFloat(vector1[i])*Float.parseFloat(vector2[i]));
+        }
+        //Realiza las normas de los vectores
+        norma1=OperacionesVector.norma(vector1);
+        norma2=OperacionesVector.norma(vector2);
+        //Saca el ángulo
+        angulo=(float) ((float) Math.acos(suma/(norma1*norma2))*180/Math.PI);
+        return angulo;
+    }
 }
