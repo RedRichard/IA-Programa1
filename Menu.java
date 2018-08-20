@@ -16,7 +16,7 @@ public class Menu{
 	private String [] vector1, vector2;
 	private float escalar;
 	public Menu() {
-		String opcion = JOptionPane.showInputDialog(null,"Escoja una de las siguientes opciones\n1.- Suma\n2.- Resta\n3.- Producto por un escalar\n4.- Norma\n5.- Angulo entre dos vectores" );
+		String opcion = JOptionPane.showInputDialog(null,"Escoja una de las siguientes opciones\n1.- Suma\n2.- Resta\n3.- Producto por un escalar\n4.- Norma\n5.- Angulo entre dos vectores\n6.- Salir" );
 
 		switch(opcion) {
 			case "1":
