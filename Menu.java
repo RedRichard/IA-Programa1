@@ -89,9 +89,9 @@ public class Menu{
 
 		JPanel myPanel = new JPanel();
 		myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
-		myPanel.add(new JLabel("dame el vector x separado por comas"));
+		myPanel.add(new JLabel("Dame el vector x separado por comas:"));
 		myPanel.add(xField);
-		myPanel.add(new JLabel("dame el vector y separado por comas"));
+		myPanel.add(new JLabel("Dame el vector y separado por comas:"));
 		myPanel.add(yField);
 		int result = JOptionPane.showConfirmDialog(null, myPanel, "Please Enter X and Y Values",
 			JOptionPane.OK_CANCEL_OPTION);
