@@ -12,11 +12,11 @@ public class Menu{
 	private String [] vector1, vector2;
 	private float escalar;
 	public Menu() {
-		String opcion = JOptionPane.showInputDialog(null,"Escoja una de las siguientes opciones\n1.- Suma\n2.- Resta\n3.- Producto por un escalar\n4.- Norma\n5.-Angulo entre dos vectores" );
+		String opcion = JOptionPane.showInputDialog(null,"Escoja una de las siguientes opciones\n1.- Suma\n2.- Resta\n3.- Producto por un escalar\n4.- Norma\n5.- Angulo entre dos vectores" );
 		
 		switch(opcion) {
 			case "1":
-				subMenuSumaResta();
+				subMenuVector2();
 				if(vector1.length != vector2.length) {
 					JOptionPane.showMessageDialog(null,"La longitud de los vectores es diferente"
 						,"error",JOptionPane.ERROR_MESSAGE);
@@ -30,7 +30,7 @@ public class Menu{
 				}
 				break;
 			case "2":
-				subMenuSumaResta();
+				subMenuVector2();
 				if(vector1.length != vector2.length) {
 					JOptionPane.showMessageDialog(null,"La longitud de los vectores es diferente"
 						,"error",JOptionPane.ERROR_MESSAGE);
@@ -38,7 +38,7 @@ public class Menu{
 					try {
 						MostrarMensaje("el nuevo vector es: " + Arrays.toString(OperacionesVector.restaDeVectores(vector1, vector2)));
 					} catch (NumberFormatException e) {
-						JOptionPane.showMessageDialog(null,"Uno de los elementos del vetor no es un numero"
+						JOptionPane.showMessageDialog(null,"Uno de los elementos del vector no es un numero"
 						,"error",JOptionPane.ERROR_MESSAGE);
 					}
 				}
@@ -61,13 +61,23 @@ public class Menu{
 						,"error",JOptionPane.ERROR_MESSAGE);
 				}
 				break;
-			default:
-				//En caso de que la opcion no sea válida se ejecuta el menu otravez
-				//Menu menu = new Menu();
-		}
+			case "5":
+				subMenuVector2();
+				if(vector1.length != vector2.length) {
+					JOptionPane.showMessageDialog(null,"La longitud de los vectores es diferente"
+						,"error",JOptionPane.ERROR_MESSAGE);
+				} else {
+					try {
+						MostrarMensaje("El valor del angulo entre los vectores es: " + String.valueOf(OperacionesVector.anguloVectores(vector1, vector2)));
+					} catch (NumberFormatException e) {
+						JOptionPane.showMessageDialog(null,"Uno de los elementos del vector no es un numero"
+						,"error",JOptionPane.ERROR_MESSAGE);
+					}
+				}
+			}
 	}
 
-	public void subMenuSumaResta() {
+	public void subMenuVector2() {
 		JTextField xField = new JTextField(100);
 		JTextField yField = new JTextField(100);
 
